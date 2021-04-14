@@ -1,0 +1,16 @@
+.jumbotronContainer{
+    margin-bottom: 2%; 
+    margin-top: 2%;
+    /* background-image: url("../../assets/images/Capitol.JPG"); */
+    background-position: 4% 4%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin: 0 auto;
+    width: 100%;
+    height: 900px;
+}

@@ -16,8 +16,12 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
+if (process.env.MONGODB_URI){
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
-
+}else{
+  require("dotenv").config();
+  //console.log(process.env.SECRETPASSWORD)
+}
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

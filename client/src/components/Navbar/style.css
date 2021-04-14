@@ -1,0 +1,27 @@
+.backgroundNav {
+    background-color: #121e42;
+  }
+.navbar-brand{
+    font-size: xx-large; 
+    text-decoration: none; 
+    color: white;
+}
+.logOff {
+    background-color: #121e42;
+    color: white;
+    font-size: small;
+    border-radius: 25px;
+    border: 2px solid white;
+    width: 120px;
+    height: 35px;
+    float: right; 
+    position: absolute;
+    right: 0; 
+    margin-right: 30px;
+  }
+  .logOff:hover {
+    box-shadow: 0 0.4rem 1.4rem 0 white;
+    transition: transform 150ms;
+    transform: scale(1.03);
+    border: 3px solid #ed1c24;
+  }

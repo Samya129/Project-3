@@ -1,0 +1,10 @@
+.display-4 {
+  text-align: center;
+  color: #ed1c24;
+  font-weight: 400;
+}
+.jumbotron-fluid {
+  margin-top: 2%;
+  width: 100%;
+  background: none;
+}

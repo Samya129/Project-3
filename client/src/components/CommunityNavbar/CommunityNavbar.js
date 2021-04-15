@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Navbar() {
+function CommunityNavbar() {
   return (
     <nav className="navbar navbar-expand-lg backgroundNav">
       <a className="navbar-brand" href="#"
@@ -16,4 +16,4 @@ function Navbar() {
     </nav>
   );
 }
-export default Navbar;
+export default CommunityNavbar;

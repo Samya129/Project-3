@@ -82,7 +82,7 @@ class Signup extends Component {
 
           </form>
           <div>
-            <h1 className= "quote">" It is not possible to be in favor of justice for some people and not be in favor of justice for all people." - Martin Luther King, Jr.</h1>
+            <h1 className= "quote">"If you can't fly then run, if you can't run then walk, if you can't walk then crawl, but whatever you do you have to keep moving forward.” ― Martin Luther King Jr.</h1>
           </div>
         </div>
         );

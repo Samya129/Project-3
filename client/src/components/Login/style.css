@@ -1,7 +1,6 @@
 .form {
     margin: 10px;
 }
-
 .containerForm {
     background-color: blue;
     color: white;
@@ -15,4 +14,7 @@
 }
 .passwordInput {
     margin: 10px;
+}
+.quote {
+    color: red;
 }

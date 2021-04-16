@@ -6,10 +6,10 @@ function CommunityJumbo() {
     <div className="jumbotron jumbotron-fluid">
       <div className="container">
         <h1 className="display-4">
-          <b>
+          <p>
             Welcome to Your <br/>
             State Community Page
-          </b>
+          </p>
         </h1>
       </div>
     </div>

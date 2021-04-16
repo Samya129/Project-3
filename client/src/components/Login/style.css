@@ -1,0 +1,18 @@
+.form {
+    margin: 10px;
+}
+
+.containerForm {
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
+.allInputs {
+    background-color: white;
+}
+.emailInput {
+    margin: 10px;
+}
+.passwordInput {
+    margin: 10px;
+}

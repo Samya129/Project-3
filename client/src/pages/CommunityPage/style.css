@@ -1,7 +1,7 @@
 .jumbotronContainer{
+    background-image: url("../../assets/images/Capitol.JPG");
     margin-bottom: 2%; 
     margin-top: 2%;
-    /* background-image: url("../../assets/images/Capitol.JPG"); */
     background-position: 4% 4%;
     background-size: cover;
     background-repeat: no-repeat;

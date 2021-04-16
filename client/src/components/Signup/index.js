@@ -82,7 +82,7 @@ class Signup extends Component {
 
           </form>
           <div>
-            <h1>Quote goes here</h1>
+            <h1 className= "quote">" It is not possible to be in favor of justice for some people and not be in favor of justice for all people." - Martin Luther King, Jr.</h1>
           </div>
         </div>
         );

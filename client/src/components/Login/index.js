@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import Pic from "../../assets/images/login.png";
 
+
 class Login extends Component {
   // Setting the component's initial state
   state = {

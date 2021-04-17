@@ -1,5 +1,11 @@
 .form input {
     margin: 10px;
+    height: 40px;
+    width: 90%;
+}
+input {
+    color:#ed1c24;
+    font-family: 'Times New Roman', Times, serif;
 }
 .quote {
     color: #ed1c24;
@@ -9,7 +15,6 @@
 }
 .form {
     background-color: #121e42;
-    color: white;
     text-align: center;
     border-radius: .8rem;
     margin-top: -150px;

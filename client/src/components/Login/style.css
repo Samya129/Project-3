@@ -3,6 +3,10 @@
     height: 40px;
     width: 90%;
 }
+input {
+    color:#ed1c24;
+    font-family: 'Times New Roman', Times, serif;
+}
 .quote {
     color: #ed1c24;
 }
@@ -11,17 +15,17 @@
 }
 .form {
     background-color: #121e42;
-    color: white;
     text-align: center;
     border-radius: .8rem;
     margin-top: -50px;
 }
 .form-group {
-    background-color: red;
+    background-color: ed1c24;
     border-radius: .8rem;
 }
 .title {
     font-size: 75px;
+    color: white;
     font-family: 'Times New Roman', Times, serif;
 }
 .container2 {

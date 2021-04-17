@@ -73,16 +73,13 @@ class Signup extends Component {
                 type="text"
                 placeholder="Confirm Password:"
               />
-              <div>
                 <input
                   type="radio" 
                   id="legal" 
                   name="consent" 
                   onChange={this.handleInputChange}
                   value={this.state.termsAndConditions}
-                />
-                <label for="legal"> I agree to the terms and conditions.</label>
-              </div>
+                /> I agree to the terms and conditions.
             </form>
           </div>
 

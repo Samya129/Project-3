@@ -2,9 +2,13 @@
     background-color: #121e42;
   }
 .navbar-brand{
-    font-size: xx-large; 
+    font-size: xx-large !important; 
+    font-weight: 540;
     text-decoration: none; 
-    color: white;
+    color: white 
+}
+.navbar-brand:hover{
+  color: white;
 }
 .logOff {
     background-color: #121e42;

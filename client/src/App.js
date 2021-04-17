@@ -1,16 +1,20 @@
 import React from "react";
-// import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import CommunityPage from "./pages/CommunityPage/CommunityPage"
+import Footer from "./components/Footer";
+import CommunityPage from "./pages/CommunityPage"
+import { BrowserRouter as Router,Switch, Route} from "react-router-dom";
 
 
 function App() {
   return (
-    <div>
-      {/* <Header /> */}
+    <Router>
+    <div className="App">
+    <Switch>
       <CommunityPage/>
+      <Route exact path="/YourCommunity" component={CommunityPage} />
+      </Switch>
       <Footer />
     </div>
+    </Router>
   );
 }
 

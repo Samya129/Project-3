@@ -1,0 +1,124 @@
+
+
+#hero {
+    height: 810px;
+    width: 100%;
+    margin-bottom: 25px;
+    background-image: url("../../assets/images/home1rvsd.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.home2 {
+    height: 500px;
+    width:700px;
+    margin-top: 140px;
+  
+}
+
+
+h1 {
+    font: weight 50;
+    font-size: 48px;
+    font-family: 'Merriweather', serif;
+	color: rgb(245, 243, 243);
+}
+
+h2{
+    color: rgb(18, 30, 66);
+    font-family: 'Merriweather', serif;
+}
+
+h3 { 
+    color: rgb(237, 28, 36);
+    font-family: 'Merriweather', serif;
+}
+
+h5 { 
+    color: rgb(18, 30, 66);
+    font-family: 'Merriweather', serif;
+}
+
+
+
+h4 {
+    color: rgb(237, 28, 36);
+    font-family: 'Merriweather', serif;
+}
+
+
+
+h6 {
+    color: rgb(237, 28, 36);
+    font-family: 'Merriweather', serif;
+}
+
+#aboutus {
+    margin-top: 100px;
+    margin-bottom: 50px;;
+    font-family: 'Merriweather', serif;
+}
+
+
+.about1 {
+    height:500px;
+    width:700px;
+    
+}
+
+#about2 {
+    height:500px;
+    width:700px;
+    margin-top: 100px;
+}
+
+
+#quote1 {
+ margin-top: 30px;
+ font-family: 'Merriweather', serif;
+}
+
+#quote2 {
+    margin-top: 40px;    
+}
+
+
+
+hr {
+    border-top:2px solid rgb(18, 30, 66)!important;
+}
+
+
+.login, .signup {
+    /* background-color:  rgb(237, 28, 36)!important; */
+    color: white;
+    font-size: small;
+    border-radius: 25px !important;
+    border: 2px solid white;
+    width: 120px;
+    height: 35px;
+    float: right; 
+    right: 0; 
+    margin-right: 30px;
+    margin: 5px;
+    font-family: 'Merriweather', serif;
+  }
+
+.login:hover, .signup:hover {
+    box-shadow: 0 0.4rem 1.4rem 0 white;
+    transition: transform 150ms;
+    transform: scale(1.03);
+    /* border: 3px solid #ed1c24; */
+}
+
+#unitevote {
+        font: size 45px;
+        font-weight: bold;
+        color: rgb(237, 28, 36);
+        margin-top: 10px;
+        font-family: 'Merriweather', serif;
+        margin-top: 20px;
+        margin-bottom: 60px;
+}
+
+

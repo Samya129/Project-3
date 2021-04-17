@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./style.css";
 import Pic from "../../assets/images/login.png";
 
-
 class Login extends Component {
   // Setting the component's initial state
   state = {
@@ -27,52 +26,62 @@ class Login extends Component {
 
   };
 
-    render() {
-        // Notice how each input has a `value`, `name`, and `onChange` prop
-        return (
-        <div className= "container">
-          
-          <div>
-            <img src={Pic} alt="loginImage" />;
-          </div>
-
-          <div className= "containerForm">
-            <h1>Log in</h1>
-            <form className="form">
-              <div className="allInputs">
-                <input className= "emailInput"
-                  value={this.state.email}
-                  name="email"
-                  onChange={this.handleInputChange}
-                  type="text"
-                  placeholder="E-mail Address"
-                />
-                <br></br>
-                <input className= "passwordInput"
-                  value={this.state.password}
-                  name="password"
-                  onChange={this.handleInputChange}
-                  type="text"
-                  placeholder="Password"
-                />
-              </div>
-              <button className= "btn btn-primary" onClick={this.handleFormSubmit}>Log in </button>
-            </form>
-          </div>
-
-          <div>
-            <h1 className= "quote">" It is not possible to be in favor of justice for some people and not be in favor of justice for all people." - Martin Luther King, Jr.</h1>
-          </div>
-
-          <div>
-            Testing email: {this.state.email}
-            <br></br>
-            Testing password: {this.state.password}
-          </div>
-
+  render() {
+      // Notice how each input has a `value`, `name`, and `onChange` prop
+  return (
+    <div className= "container">
+      <div>
+        <img src={Pic} alt="loginImage" className="img-fluid"/>
+      </div>
+      <div className= "form col-md-6 offset-md-3">
+        <div className="title">Log in
         </div>
-        );
-      }
-    }
+        <div className= "container2">
+          <form>
+            <input
+                value={this.state.email}
+                name="email"
+                onChange={this.handleInputChange}
+                type="text"
+                placeholder="Email:"
+              />
+              <br></br>
+              <input
+                value={this.state.password}
+                name="password"
+                onChange={this.handleInputChange}
+                type="text"
+                placeholder="Enter Password:"
+              />
+          </form>
+        </div>
+        <br></br>
+        <button type="submit" className="btn btn-light btn-block" onClick={this.handleFormSubmit}>Log in</button>
+      </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <div 
+        style={{ borderTop: "5px solid #121e42 "}}>
+      </div>
+      <br></br>
+      <div>
+        <h2 className= "quote">"It is not possible to be in favor of justice for some people and not be in favor of justice for all people." - Martin Luther King, Jr.</h2>
+      </div>
+      <br></br>
+      <div 
+        style={{ borderTop: "5px solid #121e42 "}}>
+      </div>
+      <br></br>
+      <div>
+        Testing email: {this.state.email}
+        <br></br>
+        Testing password: {this.state.password}
+      </div>
+    </div>
+    );
+  }
+}
 
 export default Login;

@@ -27,66 +27,90 @@ class Signup extends Component {
     event.preventDefault();
   };
 
-    render() {
-        // Notice how each input has a `value`, `name`, and `onChange` prop
-        return (
-        <div className= "container">
-          <div>
-            <img src={Pic} alt="signupImage" />;
-          </div>
-
-          <form className="form">
-            <input
-              value={this.state.fullName}
-              name="fullName"
-              onChange={this.handleInputChange}
-              type="text"
-              placeholder="Full Name"
-            />
-            <br></br>
-            <input
-              value={this.state.email}
-              name="email"
-              onChange={this.handleInputChange}
-              type="text"
-              placeholder="E-mail Address"
-            />
-            <br></br>
-            <input
-              value={this.state.password}
-              name="password"
-              onChange={this.handleInputChange}
-              type="text"
-              placeholder="Password"
-            />
-            <br></br>
-            <input
-              value={this.state.confirmationPassword}
-              name="confirmationPassword"
-              onChange={this.handleInputChange}
-              type="text"
-              placeholder="Confirm Password"
-            />
-            <div>
-            <p>
-              You are okay letting us sell your data
-            </p>
-            <input
-              value="consent"
-              onChange={this.handleInputChange}
-              type="radio"
-            />
-            </div>
-
-            <button onClick={this.handleFormSubmit}>Sign Up</button>
-
-          </form>
-          <div>
-            <h1 className= "quote">"If you can't fly then run, if you can't run then walk, if you can't walk then crawl, but whatever you do you have to keep moving forward.” ― Martin Luther King Jr.</h1>
-          </div>
+  render() {
+    // Notice how each input has a `value`, `name`, and `onChange` prop
+    return (
+      <div className= "container">
+        <div>
+          <img src={Pic} alt="signupImage" className="img-fluid "/>
         </div>
-        );
-    }
-    }
+        <div className="form col-md-6 offset-md-3">
+          <div className="title">Sign Up 
+          </div>
+          <div className= "container2">
+            <form>
+              <input
+                value={this.state.fullName}
+                name="fullName"
+                onChange={this.handleInputChange}
+                type="text"
+                placeholder="Full name:"
+              />
+              <br></br>
+              <input
+                value={this.state.email}
+                name="email"
+                onChange={this.handleInputChange}
+                type="text"
+                placeholder="Email:"
+              />
+              <br></br>
+              <input
+                value={this.state.password}
+                name="password"
+                onChange={this.handleInputChange}
+                type="text"
+                placeholder="Enter Password:"
+              />
+              <input
+                value={this.state.confirmationPassword}
+                name="confirmationPassword"
+                onChange={this.handleInputChange}
+                type="text"
+                placeholder="Confirm Password:"
+              />
+              <input
+                value={this.state.termsAndConditions}
+                type="radio" 
+                id="legal" 
+                name="consent" 
+                onChange={this.handleInputChange}
+              />
+              <label className="form-check-label" for="exampleRadios2"> I agree to the terms and conditions. </label>
+            </form>
+          </div>
+          <br></br>
+          <button type="button" className="btn btn-light btn-block" onClick={this.handleFormSubmit}>Sign Up</button>
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div 
+          style={{ borderTop: "5px solid #121e42 "}}>
+        </div>
+        <br></br>
+        <div>
+          <h2 className= "quote">"If you can't fly then run, if you can't run then walk, if you can't walk then crawl, but whatever you do you have to keep moving forward.” -Martin Luther King Jr.</h2>
+        </div>
+        <br></br>
+        <div 
+          style={{ borderTop: "5px solid #121e42 "}}>
+        </div>
+        <br></br>
+
+        <div>
+          Testing full name: {this.state.fullName}
+          <br></br>
+          Testing email: {this.state.email}
+          <br></br>
+          Testing password: {this.state.password}
+          <br></br>
+          Testing confirmation password: {this.state.confirmationPassword}
+        </div>
+
+      </div>
+    );
+  }
+}
 
 export default Signup;

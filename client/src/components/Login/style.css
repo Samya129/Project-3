@@ -1,20 +1,30 @@
-.form {
+.form input {
     margin: 10px;
-}
-.containerForm {
-    background-color: blue;
-    color: white;
-    text-align: center;
-}
-.allInputs {
-    background-color: white;
-}
-.emailInput {
-    margin: 10px;
-}
-.passwordInput {
-    margin: 10px;
+    height: 40px;
+    width: 90%;
 }
 .quote {
-    color: red;
+    color: #ed1c24;
+}
+.img-fluid {
+    width: 100%;
+}
+.form {
+    background-color: #121e42;
+    color: white;
+    text-align: center;
+    border-radius: .8rem;
+    margin-top: -50px;
+}
+.form-group {
+    background-color: red;
+    border-radius: .8rem;
+}
+.title {
+    font-size: 75px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.container2 {
+    background-color: white;
+    border-radius: .8rem;
 }

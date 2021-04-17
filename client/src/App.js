@@ -8,11 +8,10 @@ import Signup from "./components/Signup";
 function App() {
   return (
     <div>
-<Header/>
-<Login />
-{/*  */}
-{/* <Signup/> */}
-<Footer/>
+      <Header/>
+      <Login />
+      <Signup/>
+      <Footer/>
     </div>
   );
 }

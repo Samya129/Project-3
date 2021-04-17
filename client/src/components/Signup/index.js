@@ -5,7 +5,7 @@ import Pic from "../../assets/images/signup.png";
 class Signup extends Component {
   // Setting the component's initial state
   state = {
-    fullName: "",
+    username: "",
     email: "",
     password: "",
     confirmationPassword: "",
@@ -13,10 +13,22 @@ class Signup extends Component {
   };
 
   handleInputChange = event => {
+
+    if (this.state.username !== "" 
+      && this.state.email !== "" 
+      && this.state.password !== "" 
+      && this.state.confirmationPassword !== "" 
+      && this.state.termsAndConditions === true) {
+      //change the button to enabled.
+      //if user built scuccesfuly on back end (stateus code or however you want to handle it)
+      //direct user to community page
+    }
     // Getting the value and name of the input which triggered the change
     const { name, value } = event.target;
-  
-    // Updating the input's state
+    // function that runs and checks to see if all feilds have inputs
+    // then an if else ALL true then change disable 
+
+    // Updating the input's state 
     this.setState({
       [name]: value
     });
@@ -44,7 +56,7 @@ class Signup extends Component {
           <div className= "container2">
             <form>
               <input
-                value={this.state.fullName}
+                value={this.state.username}
                 name="fullName"
                 onChange={this.handleInputChange}
                 type="text"
@@ -84,7 +96,11 @@ class Signup extends Component {
           </div>
 
           <br></br>
-          <button type="button" className="btn btn-light btn-block" onClick={this.handleFormSubmit}>Sign Up</button>
+          <button disabled={this.state.username !== "" 
+      && this.state.email !== "" 
+      && this.state.password !== "" 
+      && this.state.confirmationPassword !== "" 
+      && this.state.termsAndConditions === true} type="button" className="btn btn-light btn-block" onClick={this.handleFormSubmit}>Sign Up</button>
         </div>
 
         <br></br>

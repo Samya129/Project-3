@@ -17,7 +17,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 if (process.env.MONGODB_URI){
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sourpatchDB");
 }else{
   require("dotenv").config();
   //console.log(process.env.SECRETPASSWORD)

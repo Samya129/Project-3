@@ -11,7 +11,6 @@ function App() {
   return (
     <Router>
       <div>
-
         <Switch>
           
           <Route exact path={["/"]}>

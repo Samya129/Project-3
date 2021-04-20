@@ -1,10 +1,3 @@
-
-/*
-may not need this - to discuss with team 
-const bodyParser = require("body-parser"); 
-const cors = require("cors");
-*/
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -12,8 +5,8 @@ const routes = require("./routes");
 
 const app = express();
 const db = require("./models");
-
 const Role = db.role;
+
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
@@ -78,8 +71,8 @@ function initial() {
 }
 
 // routes
-require('./app/routes/auth.routes')(app);
-require('./app/routes/user.routes')(app);
+require('./routes/auth.routes')(app);
+require('./routes/user.routes')(app);
 
 // Start the API server
 app.listen(PORT, function() {

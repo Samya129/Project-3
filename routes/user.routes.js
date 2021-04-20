@@ -10,7 +10,7 @@ We can separate our routes into 2 part: for Authentication and for Authorization
 
 // Authorization
 
-const { authJwt } = require("../middlewares");
+const { authJwt } = require("../middleware");
 const controller = require("../controllers/user.controller");
 
 module.exports = function(app) {
@@ -27,17 +27,8 @@ module.exports = function(app) {
     app.get("/api/test/user", [authJwt.verifyToken], controller.userBoard);
 
     app.get(
-        "/api/test/mod",
-        [authJwt.verifyToken, authJwt.isModerator],
-        controller.moderatorBoard
-    );
-
-    app.get(
         "/api/test/admin",
-        [
-            authJwt.verifyToken, 
-            authJwt.isAdmin
-        ],
+        [authJwt.verifyToken, authJwt.isAdmin],
         controller.adminBoard
     );
 };

@@ -9,7 +9,7 @@ We can separate our routes into 2 part: for Authentication and for Authorization
 */
 
 // Authentication 
-const { verifySignUp } = require("../middlewares");
+const { verifySignUp } = require("../middleware");
 const controller = require("../controllers/auth.controller");
 
 module.exports = function(app) {

@@ -1,4 +1,3 @@
-const express = require("express");
 
 /*
 may not need this - to discuss with team 
@@ -6,6 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 */
 
+const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sourpatchDB", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/ddd", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })

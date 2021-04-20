@@ -1,13 +1,15 @@
 const express = require("express");
 
-//may not need this - to discuss with team 
+/*
+may not need this - to discuss with team 
 const bodyParser = require("body-parser"); 
 const cors = require("cors");
-/////
+*/
 
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
+const Role = db.role;
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
@@ -22,12 +24,55 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-if (process.env.MONGODB_URI){
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sourpatchDB");
-}else{
-  require("dotenv").config();
-  //console.log(process.env.SECRETPASSWORD)
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sourpatchDB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => {
+  console.log("Successfully connect to MongoDB.");
+  initial();
+})
+.catch(err => {
+  console.error("Connection error", err);
+  process.exit();
+});
+
+function initial() {
+  Role.estimatedDocumentCount((err, count) => {
+    if (!err && count === 0) {
+      new Role({
+        name: "user"
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
+        }
+
+        console.log("added 'user' to roles collection");
+      });
+
+      new Role({
+        name: "moderator"
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
+        }
+
+        console.log("added 'moderator' to roles collection");
+      });
+
+      new Role({
+        name: "admin"
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
+        }
+
+        console.log("added 'admin' to roles collection");
+      });
+    }
+  });
 }
+
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

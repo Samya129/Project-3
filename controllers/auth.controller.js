@@ -34,13 +34,11 @@ exports.signup = (req, res) => {
                 {
                     name: { $in: req.body.roles }
                 },
-
                 (err, roles) => {
                 if (err) {
                     res.status(500).send({ message: err });
                     return;
                 }
-
                 user.roles = roles.map(role => role._id);
                 user.save(err => {
                 if (err) {

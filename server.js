@@ -73,6 +73,10 @@ function initial() {
   });
 }
 
+// routes
+require('./app/routes/auth.routes')(app);
+require('./app/routes/user.routes')(app);
+
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

@@ -11,9 +11,3 @@ db.role = require("./role.model");
 db.ROLES = ["user", "admin"];
 
 module.exports = db;
-
-/* OLD CODE
-module.exports = {
-  Book: require("./book")
-};
-*/

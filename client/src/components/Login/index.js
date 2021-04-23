@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "./style.css";
 import Pic from "../../assets/images/login.png";
+
 import { Redirect } from 'react-router-dom';
+
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
@@ -20,7 +22,6 @@ const required = (value) => {
 };
 
 class Login extends Component {
-  // Setting the component's initial state
   constructor(props) {
     super(props);
     this.handleLogin = this.handleLogin.bind(this);
@@ -83,82 +84,89 @@ class Login extends Component {
     }
 
     return (
+  
     <div className= "container">
+
       <div>
         <img src={Pic} alt="loginImage" className="img-fluid"/>
       </div>
+
       <div className= "form col-md-6 offset-md-3">
         <div className="title">Log in
-      </div>
-      <div className= "container2">
-        <br></br>
-
-        <Form
-          onSubmit={this.handleLogin}
-          ref={(c) => {
-            this.form = c;
-          }}
-        >
-
-          <Input
-            type="text"
-            className="form-control"
-            name="username"
-            placeholder = "Enter username"
-            value={this.state.username}
-            onChange={this.onChangeUsername}
-            validations={[required]}
-          />
-
-          <Input
-            type="password"
-            className="form-control"
-            name="password"
-            placeholder = "Enter password"
-            value={this.state.password}
-            onChange={this.onChangePassword}
-            validations={[required]}
-          />
-                <div 
-        style={{ borderTop: "15px solid #121e42 "}}>
-      </div>
-  
-          <button
-            className="btn btn-primary btn-block"
-            disabled={this.state.loading}
-          >
-            {this.state.loading && (
-              <span className="spinner-border spinner-border-sm"></span>
-            )}
-            <span>Login</span>
-          </button>
-
-          {message && (
-            <div className="alert alert-danger" role="alert">
-              {message}
-            </div>
-          )}
-          <CheckButton
-            style={{ display: "none" }}
+        </div>
+        <div className= "container2">
+          <br></br>
+          <Form
+            onSubmit={this.handleLogin}
             ref={(c) => {
-              this.checkBtn = c;
+              this.form = c;
             }}
-          />
-        </Form>
-    </div>
-  </div>
+          >
+            <Input
+              type="text"
+              className="form-control"
+              name="username"
+              placeholder = "Enter username"
+              value={this.state.username}
+              onChange={this.onChangeUsername}
+              validations={[required]}
+            />
+            <Input
+              type="password"
+              className="form-control"
+              name="password"
+              placeholder = "Enter password"
+              value={this.state.password}
+              onChange={this.onChangePassword}
+              validations={[required]}
+            />
+
+            <div 
+              style={{ borderTop: "15px solid #121e42 "}}>
+            </div>
+
+            <button
+              className="btn btn-primary btn-block"
+              disabled={this.state.loading}
+            >
+              {this.state.loading && (
+                <span className="spinner-border spinner-border-sm"></span>
+              )}
+              <span>Login</span>
+            </button>
+
+            {message && (
+              <div className="alert alert-danger" role="alert">
+                {message}
+              </div>
+            )}
+
+            <CheckButton
+              style={{ display: "none" }}
+              ref={(c) => {
+                this.checkBtn = c;
+              }}
+            />
+          </Form>
+        </div>
+      </div>
       <br></br>
       <br></br>
       <br></br>
       <br></br>
+
       <div 
         style={{ borderTop: "5px solid #121e42 "}}>
       </div>
+
       <br></br>
+
       <div>
         <h2 className= "quote">"It is not possible to be in favor of justice for some people and not be in favor of justice for all people." - Martin Luther King, Jr.</h2>
       </div>
+
       <br></br>
+
       <div 
         style={{ borderTop: "5px solid #121e42 "}}>
       </div>
@@ -168,4 +176,13 @@ class Login extends Component {
   }
 }
 
-export default Login;
+function mapStateToProps(state) {
+  const { isLoggedIn } = state.auth;
+  const { message } = state.message;
+  return {
+    isLoggedIn,
+    message
+  };
+}
+
+export default connect(mapStateToProps)(Login);

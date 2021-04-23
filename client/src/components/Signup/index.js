@@ -10,6 +10,16 @@ import { isEmail } from "validator";
 //import { connect } from "react-redux";
 import { register } from "../../actions/auth";
 
+const vradio = (value) => {
+  if (value === false) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        To proceed you must agree to our terms and conditions.
+      </div>
+    );
+  }
+};
+
 const required = (value) => {
   if (!value) {
     return (
@@ -50,15 +60,6 @@ const vpassword = (value) => {
   }
 };
 
-const vradio = (value) => {
-  if (value === false) {
-    return (
-      <div className="alert alert-danger" role="alert">
-        To proceed you must agree to our terms and conditions.
-      </div>
-    );
-  }
-};
 
 class Signup extends Component {
   constructor(props) {
@@ -74,7 +75,7 @@ class Signup extends Component {
       email: "",
       password: "",
       radio: false,
-      successful: false,
+      successful: false
     };
   }
 
@@ -195,7 +196,7 @@ class Signup extends Component {
                     name="radio"
                     value={this.state.password}
                     onChange={this.onChangeRadio}
-                    validations={[required, vradio ]}
+                    validations={[ vradio ]}
                   />
                   <div 
                     style={{ borderTop: "20px solid #121e42 "}}>
@@ -222,9 +223,8 @@ class Signup extends Component {
             />
 
           </Form>
-
-          </div>
         </div>
+      </div>
 
         <br></br>
         <br></br>

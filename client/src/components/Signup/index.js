@@ -169,7 +169,9 @@ class Signup extends Component {
                     onChange={this.onChangePassword}
                     validations={[required, vpassword]}
                   />
-
+                  <div 
+                    style={{ borderTop: "20px solid #121e42 "}}>
+                  </div>
                 <div className="form-group">
                   <button className="btn btn-primary btn-block">Sign Up</button>
                 </div>

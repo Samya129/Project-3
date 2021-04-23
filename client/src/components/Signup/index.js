@@ -111,7 +111,6 @@ class Signup extends Component {
     }
   }
 
-
   render() {
     const { message } = this.props;
 
@@ -128,8 +127,6 @@ class Signup extends Component {
           </div>
 
           <div className= "container2">
-
-
 
 
           <Form
@@ -205,13 +202,6 @@ class Signup extends Component {
 
 
           </div>
-
-          <br></br>
-          <button disabled={this.state.username !== "" 
-      && this.state.email !== "" 
-      && this.state.password !== "" 
-      && this.state.confirmationPassword !== "" 
-      && this.state.termsAndConditions === true} type="button" className="btn btn-light btn-block" onClick={this.handleFormSubmit}>Sign Up</button>
         </div>
 
         <br></br>

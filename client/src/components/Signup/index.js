@@ -231,19 +231,6 @@ class Signup extends Component {
         <div 
           style={{ borderTop: "5px solid #121e42 "}}>
         </div>
-
-        <br></br>
-
-        <div>
-          Testing full name: {this.state.fullName}
-          <br></br>
-          Testing email: {this.state.email}
-          <br></br>
-          Testing password: {this.state.password}
-          <br></br>
-          Testing confirmation password: {this.state.confirmationPassword}
-        </div>
-
       </div>
     );
   }

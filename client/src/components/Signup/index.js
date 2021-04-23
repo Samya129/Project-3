@@ -169,6 +169,21 @@ class Signup extends Component {
                   <div 
                     style={{ borderTop: "20px solid #121e42 "}}>
                   </div>
+
+                  <label>I agree to the terms and conditions.</label>
+                  <Input
+                    type="radio"
+                    className="form-control"
+                    name="password"
+                    placeholder="Enter a password"
+                    value={this.state.password}
+                    onChange={this.onChangePassword}
+                    validations={[required, vpassword]}
+                  />
+                  <div 
+                    style={{ borderTop: "20px solid #121e42 "}}>
+                  </div>
+                  
                 <div className="form-group">
                   <button className="btn btn-primary btn-block">Sign Up</button>
                 </div>
@@ -188,18 +203,8 @@ class Signup extends Component {
                 this.checkBtn = c;
               }}
             />
+
           </Form>
-
-            <form>
-                <input
-                  type="radio" 
-                  id="legal" 
-                  name="consent" 
-                  onChange={this.handleInputChange}
-                  value={this.state.termsAndConditions}
-                /> I agree to the terms and conditions.
-            </form>
-
 
           </div>
         </div>
@@ -226,6 +231,13 @@ class Signup extends Component {
       </div>
     );
   }
+}
+
+function mapStateToProps(state) {
+  const { message } = state.message;
+  return {
+    message,
+  };
 }
 
 export default Signup;

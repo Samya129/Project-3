@@ -76,42 +76,77 @@ class Login extends Component {
   }
 
   render() {
-      // Notice how each input has a `value`, `name`, and `onChange` prop
-  return (
-    <div className= "container">
+    const { isLoggedIn, message } = this.props;
+  
+    if (isLoggedIn) {
+      return <Redirect to="/YourCommunity" />;
+    }
 
+    return (
+    <div className= "container">
       <div>
         <img src={Pic} alt="loginImage" className="img-fluid"/>
       </div>
-
       <div className= "form col-md-6 offset-md-3">
         <div className="title">Log in
       </div>
-
       <div className= "container2">
-
-            <form>
-            <input
-                value={this.state.email}
-                name="email"
-                onChange={this.handleInputChange}
-                type="text"
-                placeholder="Email:"
-              />
-              <br></br>
-              <input
-                value={this.state.password}
-                name="password"
-                onChange={this.handleInputChange}
-                type="text"
-                placeholder="Enter Password:"
-              />
-          </form>
-
-        </div>
         <br></br>
-        <button type="submit" className="btn btn-light btn-block" onClick={this.handleFormSubmit}>Log in</button>
+
+        <Form
+          onSubmit={this.handleLogin}
+          ref={(c) => {
+            this.form = c;
+          }}
+        >
+
+          <Input
+            type="text"
+            className="form-control"
+            name="username"
+            placeholder = "Enter username"
+            value={this.state.username}
+            onChange={this.onChangeUsername}
+            validations={[required]}
+          />
+
+          <Input
+            type="password"
+            className="form-control"
+            name="password"
+            placeholder = "Enter password"
+            value={this.state.password}
+            onChange={this.onChangePassword}
+            validations={[required]}
+          />
+                <div 
+        style={{ borderTop: "15px solid #121e42 "}}>
       </div>
+  
+          <button
+            className="btn btn-primary btn-block"
+            disabled={this.state.loading}
+          >
+            {this.state.loading && (
+              <span className="spinner-border spinner-border-sm"></span>
+            )}
+            <span>Login</span>
+          </button>
+
+          {message && (
+            <div className="alert alert-danger" role="alert">
+              {message}
+            </div>
+          )}
+          <CheckButton
+            style={{ display: "none" }}
+            ref={(c) => {
+              this.checkBtn = c;
+            }}
+          />
+        </Form>
+    </div>
+  </div>
       <br></br>
       <br></br>
       <br></br>
@@ -128,11 +163,6 @@ class Login extends Component {
         style={{ borderTop: "5px solid #121e42 "}}>
       </div>
       <br></br>
-      <div>
-        Testing email: {this.state.email}
-        <br></br>
-        Testing password: {this.state.password}
-      </div>
     </div>
     );
   }

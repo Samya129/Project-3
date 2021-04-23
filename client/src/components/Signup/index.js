@@ -50,6 +50,16 @@ const vpassword = (value) => {
   }
 };
 
+const vradio = (value) => {
+  if (value === false) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        To proceed you must agree to our terms and conditions.
+      </div>
+    );
+  }
+};
+
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -57,11 +67,13 @@ class Signup extends Component {
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
+    this.onChangeRadio = this.onChangeRadio.bind(this);
 
     this.state = {
       username: "",
       email: "",
       password: "",
+      radio: false,
       successful: false,
     };
   }
@@ -84,6 +96,12 @@ class Signup extends Component {
     });
   }
 
+  onChangeRadio(e) {
+    this.setState({
+      radio: e.target.value,
+    });
+  }
+
   handleRegister(e) {
     e.preventDefault();
 
@@ -96,7 +114,7 @@ class Signup extends Component {
     if (this.checkBtn.context._errors.length === 0) {
       this.props
         .dispatch(
-          register(this.state.username, this.state.email, this.state.password)
+          register(this.state.username, this.state.email, this.state.password, this.state.radio)
         )
         .then(() => {
           this.setState({
@@ -174,16 +192,15 @@ class Signup extends Component {
                   <Input
                     type="radio"
                     className="form-control"
-                    name="password"
-                    placeholder="Enter a password"
+                    name="radio"
                     value={this.state.password}
-                    onChange={this.onChangePassword}
-                    validations={[required, vpassword]}
+                    onChange={this.onChangeRadio}
+                    validations={[required, vradio ]}
                   />
                   <div 
                     style={{ borderTop: "20px solid #121e42 "}}>
                   </div>
-                  
+
                 <div className="form-group">
                   <button className="btn btn-primary btn-block">Sign Up</button>
                 </div>
@@ -241,3 +258,4 @@ function mapStateToProps(state) {
 }
 
 export default Signup;
+//export default connect(mapStateToProps)(Register);

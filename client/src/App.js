@@ -2,11 +2,7 @@ import React from "react";
 import Footer from "./components/Footer";
 import CommunityPage from "./pages/CommunityPage";
 import { BrowserRouter as Router,Switch, Route} from "react-router-dom";
-<<<<<<< HEAD
 import Login from "./components/Login/login.component"
-=======
-import Login from "./components/Login";
->>>>>>> main
 import Signup from "./components/Signup";
 import Jumbotron from "./components/Jumbotron"
 import Home from "./components/Home"

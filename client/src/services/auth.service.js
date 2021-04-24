@@ -1,31 +1,42 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth/";
+const API_URL = "http://localhost:3001/api/auth/";
 
-class AuthService {
-  login(username, password) {
-    return axios
-      .post(API_URL + "signin", { username, password })
-      .then((response) => {
-        if (response.data.accessToken) {
-          localStorage.setItem("user", JSON.stringify(response.data));
-        }
+const register = (username, email, password) => {
+  return axios.post(API_URL + "signup", {
+    username,
+    email,
+    password,
+  });
+};
 
-        return response.data;
-      });
-  }
-
-  logout() {
-    localStorage.removeItem("user");
-  }
-
-  register(username, email, password) {
-    return axios.post(API_URL + "signup", {
+const login = (username, password) => {
+  return axios
+    .post(API_URL + "signin", {
       username,
-      email,
       password,
-    });
-  }
-}
+    })
+    .then((response) => {
+      if (response.data.accessToken) {
+        localStorage.setItem("user", JSON.stringify(response.data));
+      }
 
-export default new AuthService();
+      return response.data;
+    });
+};
+
+const logout = () => {
+  localStorage.removeItem("user");
+};
+
+const getCurrentUser = () => {
+  return JSON.parse(localStorage.getItem("user"));
+};
+
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+  register,
+  login,
+  logout,
+  getCurrentUser,
+};

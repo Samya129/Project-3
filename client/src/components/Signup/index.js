@@ -130,6 +130,10 @@ class Signup extends Component {
     }
   }
 
+
+
+
+  
   render() {
     const { message } = this.props;
 
@@ -256,6 +260,5 @@ function mapStateToProps(state) {
     message,
   };
 }
-
 //export default Signup;
 export default connect(null, mapStateToProps)(Signup);

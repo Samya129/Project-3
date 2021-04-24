@@ -187,5 +187,4 @@ function mapStateToProps(state) {
 
 
 //export default Login;
-
 export default connect(null, mapStateToProps(Login));

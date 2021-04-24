@@ -177,8 +177,8 @@ class Login extends Component {
 }
 
 function mapStateToProps(state) {
-  const { isLoggedIn } = state.auth;
-  const { message } = state.message;
+  const { isLoggedIn } = state.auth || false;
+  const { message } = state.message || "Please login.";
   return {
     isLoggedIn,
     message
@@ -186,8 +186,6 @@ function mapStateToProps(state) {
 }
 
 
-export default Login;
+//export default Login;
 
-//export default connect(mapStateToProps(Login));
-
-//export default connect(mapStateToProps(Login));
+export default connect(null, mapStateToProps(Login));

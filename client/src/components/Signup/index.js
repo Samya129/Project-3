@@ -7,7 +7,7 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 
-//import { connect } from "react-redux";
+import { connect } from "react-redux";
 import { register } from "../../actions/auth";
 
 const vradio = (value) => {
@@ -257,5 +257,5 @@ function mapStateToProps(state) {
   };
 }
 
-export default Signup;
-//export default connect(mapStateToProps)(Register);
+//export default Signup;
+export default connect(null, mapStateToProps)(Signup);

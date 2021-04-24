@@ -21,8 +21,6 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-const authenticationRoute = 
-
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sourpatchDB", {
   useNewUrlParser: true,
@@ -34,23 +32,10 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sourpatchDB", {
 })
 .catch(err => {
   console.error("Connection error", err);
-  process.exit();
+//  process.exit();
 });
 
 function initial() {
-  Role.estimatedDocumentCount((err, count) => {
-    if (!err && count === 0) {
-      new Role({
-        name: "user"
-      }).save(err => {
-        if (err) {
-          console.log("error", err);
-        }
-
-        console.log("added 'user' to roles collection");
-      });
-    }
-  });
 }
 
 // routes

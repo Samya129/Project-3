@@ -3,7 +3,7 @@ import "./style.css";
 
 function CommunityJumbo() {
   return (
-    <div className="jumbotron jumbotron-fluid">
+    <div id="community" className="jumbotron jumbotron-fluid">
       <div className="container">
         <h1 className="display-4">
           <p>

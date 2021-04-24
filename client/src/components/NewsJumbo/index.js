@@ -1,52 +1,62 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
-import axios from "axios";
+import Carousel from "react-bootstrap/Carousel";
 
+// Create event route
 function NewsJumbo() {
-  useEffect(() => {
-    axios.get(
-      "https://bing-news-search1.p.rapidapi.com/news/trendingtopics?textFormat=Raw&safeSearch=Off",
-      {
-        headers: {
-          "x-search-location": "Georgia",
-          "x-bingapis-sdk": "true",
-          // Change API for new apiKey after this works for testing.
-          "x-rapidapi-key": "45ddc71006msh100d431d8ce72d4p13d9f4jsn32ec95c8283c",
-          "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
-          "useQueryString": true
-        },
-      }
-    ).then((response)=>{
-console.log(response)
-//put params in here or within url so that it just appends articles OR videos to page and then link it to the return stuff located below
-
-const searchForm = document.querySelector('.search')
-    })
-
-  }, []);
+  const newsApi = process.env.REACT_APP_NEWS_KEY;
+  const [search, setSearch] = useState(""); //holds search term itself
+  const [newsResults, setNewsResults] = useState([]); // Actual newsResults
+  // useEffect(() => {
+  //   // console.log(process.env.REACT_APP_News_Key)
+  //   fetch(
+  //     "https://api.bing.microsoft.com/v7.0/news/search?q=Georgia+Vote&count=4",
+  //     {
+  //       method: "GET",
+  //       headers: {
+  //         "Ocp-Apim-Subscription-Key": newsApi,
+  //       },
+  //     }
+  //   )
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       // setSearch(response.value)
+  //       console.log(response.value[0]);
+  //       //name of news article, description, image and url link to article.
+  //       setNewsResults(response.value);
+  //     });
+  // }, []);
 
   return (
-    <form className="search" actions="">
-      <label for="">News</label>
-      <input className="input"></input>
-
-    </form>
-    // <section className="newsInclusive">
-    //   <div className="container newsContainer">
-    //     <h3>News</h3>
-    //     <hr></hr>
-    //     <div className="row videoRows">
-    //       <div className="col-md-3 videoApi">
-    //         <img src="BreakingNews.jpg" alt="BreakingNews" />
-    //       </div>
-    //       <div className="col-md-3 videoApi2">
-    //         <img src="Anderson.jpeg" alt="Anderson Cooper News" />
-    //       </div>
-    //       <div className="col-md-3"></div>
-    //       <div className="col-md-3"></div>
-    //     </div>
-    //   </div>
-    // </section>
+    <section className="newsInclusive">
+      <div className="container newsContainer container-fluid">
+        <h3 className="titleh3">News</h3>
+        <hr></hr>
+        <br></br>
+        <br></br>
+            <Carousel className="Size" fade>
+              {newsResults.map((news) => {
+                console.log(news);
+                return (
+                  <Carousel.Item key={news.url}>
+                    <br></br>
+                    <a className="Atag" href={news.url} target="_blank">
+                      <img
+                        className="d-block newsImage"
+                        src={news.image.thumbnail.contentUrl}
+                        alt="First slide"
+                      />
+                    </a>
+                    <Carousel.Caption>
+                      <h5>{news.name}</h5>
+                      <p className="fontColor">{news.description}</p>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                );
+              })}
+            </Carousel>
+      </div>
+    </section>
   );
 }
 export default NewsJumbo;

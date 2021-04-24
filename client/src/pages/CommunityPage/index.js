@@ -4,6 +4,7 @@ import CommunityJumbo from "../../components/CommunityJumbotron";
 import NewsJumbo from "../../components/NewsJumbo";
 import CommunityCards from "../../components/CommunityCards";
 import "./style.css"
+import CreateEventButton from "../../components/CreateEventButton";
 
 function CommunityPage() {
   return (
@@ -11,7 +12,7 @@ function CommunityPage() {
      <Navbar />
       <div className="container jumboCards">
 
-        <div className="container img-fluid jumbotronContainer">
+        <div className="container img-fluid jumbotronContainer container-fluid">
           <CommunityJumbo />
           <NewsJumbo />
         </div>
@@ -19,6 +20,7 @@ function CommunityPage() {
         <CommunityCards/>
 
       </div>
+      <CreateEventButton/> 
   </div>
     
   );

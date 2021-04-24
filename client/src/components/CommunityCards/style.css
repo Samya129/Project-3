@@ -2,7 +2,7 @@
   padding: 15px;
   margin-bottom: 8%;
   margin-top: 8%;
-  /* background-image: url("../../assets/images/"); */
+  background-image: url("../../assets/images/capitolpaper.png");
 }
 .card-title {
   text-align: center;
@@ -11,24 +11,6 @@
 .card-subtitle {
   text-align: center;
 }
-.buttonColumn {
+/* .buttonColumn {
   text-align: center;
-}
-.createEvent {
-  width: 85%;
-  align-items: center;
-  margin-top: 8%;
-  background-color: #121e42;
-  color: white;
-  font-size: small;
-  border-radius: 25px;
-  border: 2px solid #121e42;
-  height: 45px;
-  margin-bottom: 20px;
-}
-.createEvent:hover {
-    box-shadow: 0 0.4rem 1.4rem 0 white;
-    transition: transform 150ms;
-    transform: scale(1.03);
-    border: 3px solid #ed1c24;
-  }
+} */

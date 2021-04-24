@@ -4,7 +4,7 @@ import "./style.css";
 function CommunityNavbar() {
   return (
     <nav className="navbar navbar-expand-lg backgroundNav">
-      <a className="navbar-brand" href="#"
+      <a className="navbar-brand" href="/"
         >UnifyingOurVote</a
       >
       <div

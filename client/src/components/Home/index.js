@@ -16,7 +16,7 @@ function Home() {
 
     <Container fluid> 
      
-      <div className="container-fluid img-fluid" id="hero"> </div>
+      <div className="container-fluid" id="hero"> </div>
         
    
       <div className="float-right"> 
@@ -36,10 +36,10 @@ function Home() {
 
      
       <Row className="justify-content-md-center"> 
-        <Col xs lg="7">
+        <Col xs="12" sm="12" lg="7">
            <img className="about1" src={about1}/> 
         </Col>
-        <Col xs lg="5" className="pl-4">
+        <Col xs sm="12" lg="5" className="pl-4">
           <p>
             Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis molestie urna.
             Aliquam semper ultrices varius. Aliquam faucibus sit amet magna a ultrices. Aenean
@@ -64,7 +64,7 @@ function Home() {
 
           <hr/>
               <h3 className="text-center font-weight-bold" id="quote2"> "Injustice anywhere is a threat to justice everywhere" </h3> 
-              <h6 className="text-center font-weight-bold" > "Martin Luther King" </h6>
+              <h6 className="text-center font-weight-bold" > "Martin Luther King Jr." </h6>
           <hr/>
        
     </Container> 

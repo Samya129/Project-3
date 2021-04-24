@@ -1,5 +1,4 @@
 
-
 #hero {
     height: 810px;
     width: 100%;
@@ -13,51 +12,83 @@
     height: 500px;
     width:700px;
     margin-top: 140px;
-  
+
 }
+
+ @media only screen and (max-width: 680px) {
+      .home2 {
+          width:100%;
+      }
+      .about1 {
+          width: 100% !important;
+      }
+
+      .about2 {
+        width: 100% !important;
+      }
+ }
 
 
 h1 {
-    font: weight 50;
+    font-size: weight 50;
     font-size: 48px;
-    font-family: 'Merriweather', serif;
 	color: rgb(245, 243, 243);
 }
 
-h2{
+h2, h5{
     color: rgb(18, 30, 66);
-    font-family: 'Merriweather', serif;
+   
 }
 
-h3 { 
+
+
+
+
+
+
+h4, h3, h6 {
     color: rgb(237, 28, 36);
-    font-family: 'Merriweather', serif;
-}
-
-h5 { 
-    color: rgb(18, 30, 66);
-    font-family: 'Merriweather', serif;
+   
 }
 
 
 
-h4 {
-    color: rgb(237, 28, 36);
-    font-family: 'Merriweather', serif;
-}
-
-
-
-h6 {
-    color: rgb(237, 28, 36);
-    font-family: 'Merriweather', serif;
-}
 
 #aboutus {
     margin-top: 100px;
     margin-bottom: 50px;;
-    font-family: 'Merriweather', serif;
+    
 }
+
+@media only screen and (max-width: 760px) {
+
+    #aboutus  {
+        font-size: 2.75rem !important;
+    }  
+}
+
+@media only screen and (max-width: 560px) {
+
+    #aboutus  {
+        font-size: 2.5rem !important;
+    }  
+}
+
+
+ @media only screen and (max-width: 375px) {
+    #aboutus  {
+        font-size: 2rem !important;
+      }
+      
+ }
+
+
+ @media only screen and (max-width: 375px) {
+    #aboutus  {
+        font-size: 2.50rem !important;
+      }
+      
+ }
 
 
 .about1 {
@@ -75,7 +106,6 @@ h6 {
 
 #quote1 {
  margin-top: 30px;
- font-family: 'Merriweather', serif;
 }
 
 #quote2 {
@@ -85,40 +115,66 @@ h6 {
 
 
 hr {
-    border-top:2px solid rgb(18, 30, 66)!important;
+    border-top:4px solid rgb(18, 30, 66)!important;
 }
 
 
 .login, .signup {
-    /* background-color:  rgb(237, 28, 36)!important; */
-    color: white;
+    background-color:solid white!important;
+    color: rgb(18, 30, 66);
     font-size: small;
     border-radius: 25px !important;
-    border: 2px solid white;
+    border: 2px solid rgb(237, 28, 36) !important;
     width: 120px;
     height: 35px;
     float: right; 
     right: 0; 
     margin-right: 30px;
     margin: 5px;
-    font-family: 'Merriweather', serif;
+    
   }
 
 .login:hover, .signup:hover {
-    box-shadow: 0 0.4rem 1.4rem 0 white;
+    box-shadow: 0 0.4rem 1.4rem 0 rgb(18, 30, 66);
     transition: transform 150ms;
     transform: scale(1.03);
-    /* border: 3px solid #ed1c24; */
+    
 }
 
 #unitevote {
-        font: size 45px;
+        font-size:  45px;
         font-weight: bold;
         color: rgb(237, 28, 36);
-        margin-top: 10px;
-        font-family: 'Merriweather', serif;
-        margin-top: 20px;
+        margin-top: 25px;
         margin-bottom: 60px;
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+    #unitevote {
+        font-size: 4rem !important;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+
+    #unitevote {
+        font-size: 2rem !important;
+    }  
+}
+
+@media only screen and (max-width: 560px) {
+
+    #unitevote {
+        font-size: 1.75rem !important;
+    }  
 }
 
 
+ @media only screen and (max-width: 375px) {
+      #unitevote {
+        font-size: 1.75rem !important;
+      }
+      
+ }

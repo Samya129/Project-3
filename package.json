@@ -5,23 +5,34 @@
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "build": "cd client && npm run build",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
-    "build": "cd client && npm run build",
+    "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
   "authors": "",
   "license": "ISC",
   "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "@tailwindcss/postcss7-compat": "^2.1.0",
+    "autoprefixer": "^9.8.6",
     "concurrently": "^4.1.0",
+<<<<<<< HEAD
     "eslint-plugin-react-hooks": "^4.2.0",
     "nodemon": "^1.18.7",
     "redux-devtools-extension": "^2.13.9"
+=======
+    "nodemon": "^1.18.7",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.0"
+>>>>>>> main
   },
   "dependencies": {
+    "@craco/craco": "^6.1.1",
     "axios": "^0.18.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -32,7 +43,24 @@
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.6",
+<<<<<<< HEAD
     "mongoose": "^5.12.5",
     "validator": "^13.6.0"
   }
+=======
+    "mongoose": "^5.3.16",
+    "react-datepicker": "^3.8.0",
+    "react-native-tailwindcss": "^1.1.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samya129/UnifyingOurVote.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Samya129/UnifyingOurVote/issues"
+  },
+  "homepage": "https://github.com/Samya129/UnifyingOurVote#readme"
+>>>>>>> main
 }
